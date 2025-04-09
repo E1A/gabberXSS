@@ -1,12 +1,13 @@
 (function () {
-    // Create and insert the audio element without autoplay
+    // Create and insert the audio element
     var audio = document.createElement('audio');
+    audio.crossOrigin = 'anonymous';  // Added for CORS support
     audio.src = 'https://files.catbox.moe/63jpnt.mp3';
     audio.loop = true;
     audio.style.display = 'none';
     document.body.appendChild(audio);
 
-    // Function to start audio playback
+    // Function to start audio playback on user interaction
     function startAudio() {
         audio.play().catch(function(error) {
             console.log('Playback was prevented:', error);
@@ -14,8 +15,6 @@
         // Remove the event listener after the first interaction
         document.removeEventListener('click', startAudio);
     }
-
-    // Add event listener for user interaction
     document.addEventListener('click', startAudio);
 
     // Create and style the fullscreen GIF
@@ -49,5 +48,5 @@
         } else {
             clearInterval(fadeInterval); // Stop when reaching 60%
         }
-    }, 5000); // Every 5 seconds
+    }, 5000);
 })();
