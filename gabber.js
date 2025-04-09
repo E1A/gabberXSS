@@ -1,7 +1,7 @@
 (function () {
     // Create and insert the audio element
     var audio = document.createElement('audio');
-    audio.src = 'https://github.com/E1A/gabberXSS/raw/refs/heads/main/DRS.mp3';
+    audio.src = 'https://files.catbox.moe/63jpnt.mp3';
     audio.autoplay = true;
     audio.loop = true;
     audio.style.display = 'none';
